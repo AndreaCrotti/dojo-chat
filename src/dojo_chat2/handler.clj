@@ -11,11 +11,22 @@
   (if-not (contains? @users user)
     (do
       (reset! users (assoc @users user []))
-      {:status 201 :body "Created user" :headers {"Content-Type" "text/plain"}})))
+      {:status 201 :body "Created user" :headers {"Content-Type" "text/plain"}})
+    {:status 400 :body "User already existing"}))
+
+(defn get-messages
+  [user]
+  (let [body (str (@users user))]
+    {:status 200 :body body}))
+
+(defn send-message
+  [from to]
+  )
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (POST "/register" kwargs (register (:user (:params kwargs))))
+  (GET "/messages" [user] (get-messages user))
   (route/not-found "Not Found"))
 
 (def app
