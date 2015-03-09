@@ -7,12 +7,15 @@
 
 (defn register
   [user]
+  (println (format "user = %s ,users = %s" user @users))
   (if-not (contains? @users user)
-    (reset! users (assoc @users user []))))
+    (do
+      (reset! users (assoc @users user []))
+      {:status 201 :body "Created user" :headers {"Content-Type" "text/plain"}})))
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
-  (POST "/register" [user] (register user))
+  (POST "/register" [kwargs] (register (:user kwargs)))
   (route/not-found "Not Found"))
 
 (def app
