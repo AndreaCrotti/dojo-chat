@@ -1,0 +1,2 @@
+REGISTER:
+- curl http://localhost:3000/register -d "user=something" --header "Content-type:application/x-www-form-urlencoded" -X POST
