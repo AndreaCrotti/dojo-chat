@@ -1,6 +1,15 @@
-# dojo-chat2
+# dojo-chat
 
-FIXME
+## Endpoints
+
+REGISTER:
+- curl http://localhost:3000/register -d "user=something" --header "Content-type:application/x-www-form-urlencoded" -X POST
+
+GET:
+- curl http://localhost:3000/messages?user=andrea
+
+SEND:
+- curl http://localhost:3000/messages?user=andrea
 
 ## Prerequisites
 

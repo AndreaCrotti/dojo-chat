@@ -1,4 +1,4 @@
-(defproject dojo-chat2 "0.1.0-SNAPSHOT"
+(defproject dojo-chat "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
@@ -8,7 +8,7 @@
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [http-kit "2.1.16"]]
   :plugins [[lein-ring "0.8.13"]]
-  :ring {:handler dojo-chat2.handler/app}
+  :ring {:handler dojo-chat.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring-mock "0.1.5"]]}})

@@ -1,4 +1,4 @@
-(ns dojo-chat2.handler
+(ns dojo-chat.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))

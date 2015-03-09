@@ -1,7 +1,7 @@
-(ns dojo-chat2.handler-test
+(ns dojo-chat.handler-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [dojo-chat2.handler :refer :all]))
+            [dojo-chat.handler :refer :all]))
 
 (deftest test-app
   (testing "main route"
