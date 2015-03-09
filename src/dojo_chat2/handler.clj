@@ -19,7 +19,7 @@
   (str @(@users user)))
 
 (defn send-message
-  [from to message]
+  [to message]
   (swap! (@users to) (fn [x] (conj x message)))
   {:status 201 :body (format "Sent message to user %s" to)})
 
@@ -32,4 +32,3 @@
 
 (def app
   (wrap-defaults app-routes api-defaults))
-) 
