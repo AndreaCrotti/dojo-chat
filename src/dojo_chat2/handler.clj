@@ -15,7 +15,7 @@
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
-  (POST "/register" [kwargs] (register (:user kwargs)))
+  (POST "/register" kwargs (register (:user (:params kwargs))))
   (route/not-found "Not Found"))
 
 (def app
